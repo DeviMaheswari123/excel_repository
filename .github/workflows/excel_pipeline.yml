@@ -24,4 +24,4 @@ jobs:
           pip install openpyxl
 
       - name: Run Python script  # Action to run the Python script
-        run: python randomCalc2.py  # Replace with your script name if different
+        run: python randomcalc2.py  # Replace with your script name if different
