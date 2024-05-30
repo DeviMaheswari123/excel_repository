@@ -1,0 +1,27 @@
+name: Excel Manipulation Pipeline
+
+on:
+  push:
+    branches:
+      - main  # Trigger the workflow on push events to the main branch
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest  # Operating system for the job
+
+    steps:
+      - name: Check out repository  # Action to check out the repository
+        uses: actions/checkout@v2
+
+      - name: Set up Python  # Action to set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Replace with your desired Python version
+
+      - name: Install dependencies  # Action to install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install openpyxl
+
+      - name: Run Python script  # Action to run the Python script
+        run: python randomCalc2.py  # Replace with your script name if different
